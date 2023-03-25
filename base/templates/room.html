@@ -1,6 +1,13 @@
 {% extends 'main.html' %}
 {% block title %}Room{% endblock %}
 {% block content %}
-<h1>{{room.name}}</h1>
-<h2>Entered room #{{room.id}}: </h2>
+<p>room #{{room.id}}</p>
+<div>
+    <div>
+        <h1>{{room.title}}</h1>
+        <p>{{room.description}}</p>
+        <h2>{{room.original_post.user.username}} posted:</h2>
+        <p>{{room.original_post.content}}</p>
+    </div>
+</div>
 {% endblock %}
