@@ -21,3 +21,17 @@ class Post(models.Model):
 
     def __str__(self):
         return str(self.content[:25] + "...")
+
+
+class Room(models.Model):
+    title = models.CharField(max_length=30)
+    description = models.TextField(null=True, blank=True)
+    Icon = models.ImageField(null=True, blank=True)
+    # each time an instance is updated
+    updated = models.DateTimeField(auto_now=True)
+    # each time an instance is created
+    created = models.DateTimeField(auto_now_add=True)
+    closed = models.DateTimeField(null=True)
+
+    def __str__(self):
+        return str(self.title)
