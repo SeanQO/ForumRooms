@@ -31,7 +31,7 @@ class Room(models.Model):
     updated = models.DateTimeField(auto_now=True)
     # each time an instance is created
     created = models.DateTimeField(auto_now_add=True)
-    closed = models.DateTimeField(null=True)
+    closed = models.DateTimeField(null=True, blank=True)
 
     def __str__(self):
         return str(self.title)
